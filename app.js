@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const exphbs = require('express-handlebars')
 const methodOverride = require('method-override')
 const session = require('express-session')
+const userPassport = require('./config/passport')
 
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
@@ -29,7 +30,7 @@ app.use(
     saveUninitialized: true
   })
 )
-
+userPassport(app)
 app.use(routes)
 
 app.listen(PORT, () => {
