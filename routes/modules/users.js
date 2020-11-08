@@ -29,6 +29,8 @@ router.post('/register', (req, res) => {
   }
   if (password !== confirmPassword) {
     errors.push({ message: '密碼與確認密碼不相符！' })
+  } else if (password.length < 8) {
+    errors.push({ message: '密碼長度請大於8個字元！' })
   }
   if (errors.length) {
     return res.render('register', {

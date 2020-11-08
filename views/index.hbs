@@ -41,7 +41,7 @@
       <a href="/restaurants/{{this._id}}" class="text-secondary">
         <div class="card mb-2">
           <div class="card-top">
-            <img class="card-img-top img-fluid" src="{{this.image}}" alt="{{this.name}}">
+            <img class="card-img-top img-fluid" style='min-height:180px' onerror="nofind()" src="{{this.image}}" alt="{{this.name}}">
           </div>
           <div class="card-body pl-3">
             <h6 class="card-title mb-1">{{this.name}}</h6>
